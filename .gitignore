@@ -1,0 +1,8 @@
+# Composer dependencies
+/vendor/
+
+# IDE - PhpStorm
+/.idea/
+
+# macOS system files
+.DS_Store
