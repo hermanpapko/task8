@@ -1,0 +1,11 @@
+EXPLAIN ANALYZE
+SELECT * FROM orders
+WHERE created_at BETWEEN '2025-01-01' AND '2025-01-31';
+
+EXPLAIN ANALYZE
+SELECT * FROM orders
+WHERE customer_id = 12345;
+
+EXPLAIN ANALYZE
+SELECT * FROM orders
+WHERE status = 'shipped' AND amount > 4000;
