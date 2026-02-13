@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Database;
+
 use PDO;
 use PDOException;
 
@@ -8,10 +10,10 @@ class Database
     private ?PDO $connection = null;
 
     public function __construct(
-        private string $host,
-        private string $dbname,
-        private string $user,
-        private string $password
+        private readonly string $host,
+        private readonly string $dbname,
+        private readonly string $user,
+        private readonly string $password
     ) {}
 
     public function getConnection(): ?PDO
@@ -31,7 +33,7 @@ class Database
             $this->connection = new PDO($dsn, $this->user, $this->password, $options);
             return $this->connection;
         } catch (PDOException $e) {
-            error_log("Connection failed: " . $e->getMessage());
+            echo $e->getMessage();
             return null;
         }
     }
